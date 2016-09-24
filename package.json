@@ -1,0 +1,13 @@
+{
+  "name": "beware-blocks",
+  "version": "0.0.1",
+  "description": "a falling block puzzle game using cycle.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremylarter/beware-blocks"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "jslint": "^0.10.3"
+  }
+}

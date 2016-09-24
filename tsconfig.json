@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "out": "scripts/beware.blocks.js",
+        "watch": true,
+        "sourceMap": true,
+        "removeComments": true
+    },
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
