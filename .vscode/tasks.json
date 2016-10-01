@@ -1,11 +1,69 @@
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
-    "version": "0.1.0",
-    "command": "tsc",
-    "isShellCommand": true,
-    "args": ["-w", "-p", "."],
-    "showOutput": "silent",
-    "isWatching": true,
-    "problemMatcher": "$tsc"
+//     "version": "0.1.0",
+//     "command": "tsc",
+//     "isShellCommand": true,
+//     "args": ["-w", "-p", "."],
+//     "showOutput": "silent",
+//     "isWatching": true,
+//     "problemMatcher": "$tsc"
+// }
+// {
+
+	"version": "0.1.0",
+
+	//"command": "${workspaceRoot}/node_modules/.bin/webpack",//assumes local install instead of global
+	"command": "npm",
+	"isShellCommand": true,
+	"args": [
+		"run"//can use "npm run webpack" to run the local version. No need for global install of webpack
+		//note that the webpack task must exist in package.json scripts section for this to work
+	],
+
+	// "args": [
+	// 	"--display-modules",
+	// 	"--progress"
+	// ],
+
+	"echoCommand": true,
+
+    //"suppressTaskName": true,//stops taskName string from being appended to command
+
+    "isBuildCommand": false,
+
+	"tasks": [
+		{
+			"taskName": "build",
+			"isBuildCommand": true //Ctrl+Shift+B now runs this task
+		},
+		{
+			"taskName": "build:watch"
+		},
+		{
+			"taskName": "webpack-dev-server"
+		},
+
+		// {
+		// 	"taskName": "webpack development",
+		// 	"isBuildCommand": true,//Ctrl+Shift+B now runs this task
+		// 	"args": [
+		// 		"--debug", //http://webpack.github.io/docs/cli.html#development-shortcut-d
+		// 		"--devtool source-map", 
+		// 		"--output-pathinfo", 
+		// 		"--watch"//http://webpack.github.io/docs/cli.html#watch-mode-watch
+		// 		//to terminate running task: Ctrl + Shift + P Tasks: Terminate Running Task
+		// 		//or Ctrl + P >Tasks: Terminate Running Task
+		// 		//note that typing ">" turns the Quick Open into a Command Palette
+		// 		]
+		// },
+
+		{
+			"taskName": "webpack production",
+			"args": [
+				"--optimize-minimize", //http://webpack.github.io/docs/cli.html#production-shortcut-p
+				"--optimize-occurence-order"
+				]
+		}
+	]
 }

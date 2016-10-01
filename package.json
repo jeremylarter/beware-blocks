@@ -1,6 +1,6 @@
 {
   "name": "beware-blocks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a falling block puzzle game using cycle.js",
   "repository": {
     "type": "git",
@@ -8,6 +8,18 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "jslint": "^0.10.3"
+    "jslint": "^0.10.3",
+    "ts-loader": "^0.8.2",
+    "tslint": "^3.15.1",
+    "tslint-loader": "^2.1.5",
+    "typings": "^1.4.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "scripts": {
+    "build": "webpack --debug --devtool source-map --output-pathinfo",
+    "build:watch": "webpack --display-modules --progress --debug --devtool source-map --output-pathinfo --watch",
+    "webpack-dev-server": "webpack-dev-server",
+    "webpack": "webpack"
   }
 }

@@ -1,11 +1,16 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "out": "scripts/beware.blocks.js",
+        "outDir": "built",
         "watch": true,
         "sourceMap": true,
-        "removeComments": true
+        "removeComments": false,
+        "module": "commonjs"
     },
+    "files": [
+        "./scripts/beware.blocks.ts",
+        "node_modules/typescript/lib/lib.es6.d.ts"
+    ],
     "exclude": [
         "node_modules",
         "**/*.spec.ts"
