@@ -21,5 +21,8 @@
     "build:watch": "webpack --display-modules --progress --debug --devtool source-map --output-pathinfo --watch",
     "webpack-dev-server": "webpack-dev-server",
     "webpack": "webpack"
+  },
+  "dependencies": {
+    "normalize.css": "^4.2.0"
   }
 }
