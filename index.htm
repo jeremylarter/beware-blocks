@@ -27,12 +27,18 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <h1>Beware blocks</h1>
-        <p><em>Initial build configuration:</em> Webpack lints typescript using tslint preloader (es6 modules) and compiles to es5 javascript with tsc loader. Then webpack bundles with modules from Rxjs, cyclejs.</p>
-        <p><em>todo:</em> add test framework mocha, chai, sinon, add local storage logger, production build that minifies, investigate where .vscode\launch.json came from, semantic versioning, use webpack to bundle and minify css (normalize.css)</p>
+        <p><em>Initial build configuration:</em> Webpack lints typescript using tslint preloader (es6 modules) and compiles to es5 javascript with tsc loader. Then webpack bundles with modules from Rxjs, cyclejs. There is a production build that minifies javascript (bundle.min.js).</p>
+        <p><em>todo:</em> add test framework mocha, chai, sinon, 
+        add local storage logger, 
+        investigate where .vscode\launch.json came from, 
+        semantic versioning, 
+        use webpack to bundle and minify css (normalize.css), 
+        investigate typings install es6 instead of "node_modules/typescript/lib/lib.es6.d.ts" in tsconfig.json</p>
         <p><em>setup notes:</em> Using visual studio code. Installed typescript globally then used npm link typescript. Run locally using webpack-dev-server.</p>
         <p><em>local development:</em> added shift+alt+b shortcut to terminate webpack-dev-server running in watch mode, added Ctrl+L delete line</p>
         <div id="app"></div>
         <canvas id="myCanvas"></canvas>
         <script src="/built/bundle.js"></script>
+        <!--<script src="/built/bundle.min.js"></script>-->
     </body>
 </html>

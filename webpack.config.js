@@ -1,4 +1,4 @@
-/* jslint
+/*jslint
     node
 */
 module.exports = {

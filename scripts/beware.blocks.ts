@@ -6,7 +6,7 @@
 // http://localhost:8080/
 import {Observable} from "rxjs";
 import {run} from "@cycle/rxjs-run";
-import {makeDOMDriver, h1} from "@cycle/dom";
+import {makeDOMDriver, h1} from "@cycle/dom";//seems to require xstream
 
 function main() {
   const a = "test built 8";

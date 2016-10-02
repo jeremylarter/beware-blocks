@@ -43,6 +43,9 @@
 		{
 			"taskName": "webpack-dev-server"
 		},
+		{
+			"taskName": "build:production"
+		}
 
 		// {
 		// 	"taskName": "webpack development",
@@ -58,12 +61,12 @@
 		// 		]
 		// },
 
-		{
-			"taskName": "webpack production",
-			"args": [
-				"--optimize-minimize", //http://webpack.github.io/docs/cli.html#production-shortcut-p
-				"--optimize-occurence-order"
-				]
-		}
+		// {
+		// 	"taskName": "webpack production",
+		// 	"args": [
+		// 		"--optimize-minimize", //http://webpack.github.io/docs/cli.html#production-shortcut-p
+		// 		"--optimize-occurence-order"
+		// 		]
+		// }
 	]
 }
