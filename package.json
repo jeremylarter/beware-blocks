@@ -1,6 +1,6 @@
 {
   "name": "beware-blocks",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a falling block puzzle game using cycle.js",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "ts-loader": "^0.8.2",
     "tslint": "^3.15.1",
     "tslint-loader": "^2.1.5",
-    "typings": "^1.4.0",
+    "typescript": "^2.0.3",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1",
     "xstream": "^6.4.1"

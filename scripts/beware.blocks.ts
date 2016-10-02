@@ -6,10 +6,10 @@
 // http://localhost:8080/
 import {Observable} from "rxjs";
 import {run} from "@cycle/rxjs-run";
-import {makeDOMDriver, h1} from "@cycle/dom";//seems to require xstream
+import {makeDOMDriver, h1} from "@cycle/dom"; // seems to require xstream
 
 function main() {
-  const a = "test built 8";
+  const a = "test built 9";
   const sinks = {
     DOM: Observable.interval(1000).map(i =>
       h1("" + i + " seconds elapsed")
