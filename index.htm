@@ -2,41 +2,149 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>beware blocks</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/node_modules/normalize.css/normalize.css" rel="stylesheet" type="text/css" />
-        <style>
-            h1 {
-                margin: 1em;
-            }
-            p {
-                margin: 2em;
-            }
-            canvas {
-                display: block;
-            }
-        </style>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>beware blocks</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/node_modules/normalize.css/normalize.css" rel="stylesheet" type="text/css" />
+    <style>
+        h1 {
+            margin: 1em;
+        }
+        
+        p {
+            margin: 2em;
+        }
+        
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Beware blocks</h1>
-        <p><em>Initial build configuration:</em> Webpack lints typescript using tslint preloader (es6 modules) and compiles to es5 javascript with tsc loader. Then webpack bundles with modules from Rxjs, cyclejs. There is a production build that minifies javascript (bundle.min.js).</p>
-        <p><em>todo:</em> add test framework mocha, chai, sinon, 
-        add local storage logger, 
-        investigate where .vscode\launch.json came from, 
-        semantic versioning, 
-        use webpack to bundle and minify css (normalize.css)</p>
-        <p><em>local development:</em> npm run webpack-dev-server, added shift+alt+b shortcut to terminate webpack-dev-server running in watch mode, added Ctrl+L delete line</p>
-        <div id="app"></div>
-        <canvas id="myCanvas"></canvas>
-        <script src="/built/bundle.js"></script>
-        <!--<script src="/built/bundle.min.js"></script>-->
-    </body>
+    <h1>Beware blocks</h1>
+    <div id="app"></div>
+    <canvas id="myCanvas"></canvas>
+    <p><em>todo:</em>
+        <ul>
+            <li><a href="https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/testing.md">write tests using mocha, chai, sinon, (installed)</a>,
+                <a href="http://chaijs.com/guide/styles/#should">chai should</a>, wrap the test runner in a try to catch the errorlevel that returns the number of tests that fail because npm incorrectly interprets this as a script failure instead of a test failure</li>
+            <li>add local storage logger</li>
+            <li>solve the build configuration issue that components cannot be split into separate ecmascript 2015 (es6) modules
+                (i.e typescript source files with import / export) with webpack 1.x.x <a href="https://webpack.github.io/docs/code-splitting.html#es6-modules">code splitting es6</a>,
+                perhaps switch the process around to transpile first and then use webpack for the transpiled javascript files,
+                prefer to upgrade webpack when functionality exists</li>
+            <li>improve / clarify workflow of .vscode\launch.json, see <a href="https://code.visualstudio.com/Docs/editor/debugging#_launch-configurations">launch configurations</a></li>
+            <li>semantic versioning</li>
+            <li>use webpack to bundle and minify css (normalize.css)</li>
+            <li>use webpack to automatically add css autoprefixer / <a href="https://github.com/postcss/postcss-loader">postcss-loader</a></li>
+            <li>investigate code coverage options such as <a href="https://github.com/gotwarlost/istanbul">Istanbul</a></li>
+            <li>investigate adding a previewer to visual studio code</li>
+        </ul>
+    </p>
+    <p><em>goals</em>
+        <ul>
+            <li>to learn functional and reactive programming</li>
+            <li>to learn test driven development in the context of reactive programming and ecmascript 2015</li>
+            <li>to learn visual studio code</li>
+            <li>to learn git / github workflow</li>
+            <li>to use tomorrow's technology today</li>
+            <li>to reduce framework use to the minimum</li>
+            <li>add logging to enable state saving and playback</li>
+            <li>to understand when to choose different technology stacks
+                <ul>
+                    <li>webpack vs browserify</li>
+                    <li>module system: ecmascript 2015 (es6) vs commonjs vs AMD (asynchronus module definition)</li>
+                    <li>typescript vs babel</li>
+                    <li>mocha+chai+sinon vs jasmine+sinon</li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+    <p><em>challenges:</em>
+        <ul>
+            <li>use ecmascript 2015 in typescript without babel</li>
+            <li>use cyclejs with Rxjs 5 (beta) with cold observables instead of xstream</li>
+            <li>add end to end tests with karma and phantom</li>
+            <li>use @types/* instead of typings / definitely typed libraries, <a href="https://blogs.msdn.microsoft.com/typescript/2016/06/15/the-future-of-declaration-files/">@types/* is the future</a>                "Getting type declarations in TypeScript 2.0 will require no tools apart from npm."</li>
+            <li>understand the reason for using typescript is for the benefits of static typing compile time checks that reduce
+                the test effort required and convenient intellisense tooling</li>
+            <li>understand that dynamic typing should imply test driven development</li>
+            <li>to have the tests and code in the same project (not resort to splitting soley due to technology limitations)</li>
+            <li>to automate tests as code changes for a quick feedback loop</li>
+        </ul>
+    </p>
+    <p><em>notes:</em>
+        <ul>
+            <li>I have decided to use:
+                <ul>
+                    <li>ecmascript 2015 (es6) with typescript 2.x transpiling to es5 where possible (code and tests) instead
+                        of babel because I want the benefits of static types and I expect that babel will not be required
+                        in the future when browsers catch up</li>
+                    <li>ecmascript 2015 modules where possible for future proofing. Currently unable to use for webpack 1.x.x
+                        so inlining components temporarily (expected small code base)</li>
+                    <li>commonjs modules for transpiled code instead of AMD because of the prevalence of nodejs
+                    </li>
+                    <li>npm for the build system because it seems elegant and avoids adding extra technology (gulp, grunt)</li>
+                    <li>cyclejs for the functional and reactive programming because it makes sense to me <a href="https://github.com/cyclejs/cyclejs/blob/master/dom/package.json">cyclejs package.json</a>,
+                        <a href="http://cycle.js.org/documentation.html">cyclejs documentation</a></li>
+                    <li>webpack instead of browserify because webpack seemed to support the other technology choices that I made</li>
+                </ul>
+            </li>
+            <li>undecided on rxjs vs xstream so will probably mix the two for now</li>
+        </ul>
+    </p>
+    <p><em>local development:</em>
+        <ul>
+            <li>npm run webpack-dev-server</li>
+            <li>added shift+alt+b shortcut to terminate webpack-dev-server running in watch mode</li>
+            <li>added Ctrl+L delete line</li>
+        </ul>
+    </p>
+    <p><em>Build configuration:</em> Webpack lints typescript using tslint preloader (es6 modules) and compiles to es5 javascript
+        with tsc loader. Then webpack bundles with modules from Rxjs, cyclejs. There is a production build (build:production)
+        that minifies javascript (bundle.min.js). Uncomment the min script to test the production version.</p>
+    <script src="/built/bundle.js"></script>
+    <!--<script src="/built/bundle.min.js"></script>-->
+    <!--<script>
+            // class Person {
+            //     constructor (firstName, lastName) {
+            //         console.log("creating person");
+            //         this._firstName = firstName;
+            //         this._lastName = lastName;
+            //     }
+
+            //     get firstName() {
+            //         console.log("get firstName");
+            //         return this._firstName
+            //     }
+
+            //     get lastName() {
+            //         console.log("get lastName");
+            //         return this._lastName
+            //     }
+
+            //     getFullName() {
+            //         return this.firstName + " " + this.lastName;
+            //     }
+            // }
+
+            // var p = new Person("Bob", "Smith");
+
+            // console.log(p.getFullName());
+
+            //console.dir(p);
+        </script>-->
+</body>
+
 </html>

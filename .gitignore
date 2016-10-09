@@ -1,3 +1,7 @@
 node_modules/ 
 dist/
 built/
+test/*.spec.js
+test/*.spec.js.map
+scripts/app.js
+scripts/app.js.map

@@ -41,6 +41,19 @@
             "port": 5858,
             "sourceMaps": false,
             "outDir": null
+        },
+        {
+            //https://blog.tonysneed.com/2016/01/30/visual-studio-code-typescript-part-1/
+            "name": "Debug Current TypeScript File",
+            "type": "node",
+            "request": "launch",
+            // File currently being viewed
+            "program": "${file}",
+            "stopOnEntry": true,
+            "args": [],
+            "cwd": "${workspaceRoot}/test",
+            "sourceMaps": true,
+            "outDir": "${workspaceRoot}/test"
         }
     ]
 }

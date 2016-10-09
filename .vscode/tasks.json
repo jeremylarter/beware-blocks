@@ -45,7 +45,21 @@
 		},
 		{
 			"taskName": "build:production"
+		},
+		{
+			"taskName": "test",
+			"isTestCommand": true
+		},
+		{
+			"taskName": "test:debug"
+		},
+		{
+			"taskName": "test:inspect"
+		},
+		{
+			"taskName": "build:test"
 		}
+		
 
 		// {
 		// 	"taskName": "webpack development",

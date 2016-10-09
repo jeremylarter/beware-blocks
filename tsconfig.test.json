@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "outDir": "built",
-        "watch": true,
+        // "outDir": "test",
         "sourceMap": true,
         "removeComments": false,
         "module": "commonjs",
@@ -11,11 +10,18 @@
             "dom"//adds HTMLCollection, NodeList, EventTarget, XMLHttpRequest, Event, MessageEvent, WebSocket, CloseEvent, Text, Element
         ]
     },
-    // "files": [
-    //     "./scripts/beware.blocks.ts"
-    // ],
+    //https://www.typescriptlang.org/docs/handbook/tsconfig-json.html include/exclude setting pair is mutually exclusive with files setting
+    "include": [
+        // "./test/**/*",
+        "./test/*.spec.ts"
+    ],
     "exclude": [
-        "node_modules",
-        "**/*.spec.ts"
+        "node_modules"
     ]
+    // "files": [
+    //     "./test/mochaInstalled.spec.ts",
+    //     "./test/chaiInstalled.spec.ts",
+    //     "./test/sinkShouldDisplayContent.spec.ts",
+    //     "./test/sourceShouldOutputContent.spec.ts"
+    // ]
 }

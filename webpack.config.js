@@ -2,7 +2,7 @@
     node
 */
 module.exports = {
-    entry: "./scripts/beware.blocks.ts",
+    entry: "./scripts/app.ts",
     output: {
         filename: "built/bundle.js",
         sourcePrefix: ""
