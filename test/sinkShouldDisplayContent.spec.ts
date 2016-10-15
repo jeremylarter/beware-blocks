@@ -9,7 +9,7 @@
 import * as mocha from "mocha";
 import * as chai from 'chai';
 import {should, assert, config, expect, AssertionError} from "chai";
-import {Blocks} from "../scripts/app";
+import {Blocks} from "../scripts/blocks";
 
 before(function () {
     chai.should();//add should syntax to prototypes for fluent assertions

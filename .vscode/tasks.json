@@ -37,29 +37,28 @@
 			"taskName": "build",
 			"isBuildCommand": true //Ctrl+Shift+B now runs this task
 		},
-		{
-			"taskName": "build:watch"
-		},
-		{
-			"taskName": "webpack-dev-server"
-		},
+		// {
+		// 	"taskName": "build:webpack:watch"
+		// },
 		{
 			"taskName": "build:production"
+		},
+		{
+			"taskName": "dev-server"
 		},
 		{
 			"taskName": "test",
 			"isTestCommand": true
 		},
+		// {
+		// 	"taskName": "test:build"
+		// },
+		// {
+		// 	"taskName": "test:debug:mocha:inspect"
+		// },
 		{
 			"taskName": "test:debug"
-		},
-		{
-			"taskName": "test:inspect"
-		},
-		{
-			"taskName": "build:test"
 		}
-		
 
 		// {
 		// 	"taskName": "webpack development",

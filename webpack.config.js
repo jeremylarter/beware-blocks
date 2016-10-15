@@ -2,7 +2,7 @@
     node
 */
 module.exports = {
-    entry: "./scripts/app.ts",
+    entry: "./built/app.js",
     output: {
         filename: "built/bundle.js",
         sourcePrefix: ""
@@ -15,16 +15,9 @@ module.exports = {
                 loader: "tslint"
             }
         ],
-        loaders: [
-            {
-                test: /\.ts$/,
-                exclude: /node_modules/,
-                loader: "ts-loader"
-            }
-        ],
 
         resolve: {
-            extensions: ['', '.js', '.ts']
+            extensions: ['', '.js']
         }
     }
 };

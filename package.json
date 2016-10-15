@@ -17,6 +17,7 @@
     "@cycle/dom": "^12.2.5",
     "@cycle/rxjs-run": "^3.0.3",
     "chai": "^3.5.0",
+    "eslint": "^3.8.0",
     "jslint": "^0.10.3",
     "mocha": "^3.1.0",
     "rxjs": "^5.0.0-beta.12",
@@ -30,17 +31,29 @@
     "xstream": "^6.4.1"
   },
   "scripts": {
-    "build": "webpack --debug --devtool source-map --output-pathinfo",
-    "build:watch": "webpack --display-modules --progress --debug --devtool source-map --output-pathinfo --watch",
-    "build:production": "webpack --config webpack-production.config.js --optimize-minimize --optimize-occurence-order",
-    "build:test": "tsc -p tsconfig.test.json",
-    "test": "npm run build:test && npm run test:runner",
+    "build": "npm run build:transpile && npm run build:webpack",
+    "build:transpile": "tsc",
+    "build:webpack": "webpack --debug --devtool source-map --output-pathinfo",
+    "build:webpack:watch": "webpack --display-modules --progress --debug --devtool source-map --output-pathinfo --watch",
+
+    "build:production": "npm run build:production:transpile && npm run build:production:webpack",
+    "build:production:transpile": "tsc",
+    "build:production:webpack": "webpack --config webpack-production.config.js --optimize-minimize --optimize-occurence-order",
+
+    "dev-server": "npm run dev-server:transpile && npm run dev-server:webpack",
+    "dev-server:transpile": "tsc",
+    "dev-server:webpack": "webpack-dev-server",
+
+    "test": "npm run test:build && npm run test:runner",
+    "test:build": "tsc -p tsconfig.test.json",
     "test:runner": "mocha",
-    "test:debug": "mocha --debug-brk",
-    "test:inspect": "mocha --debug-brk --inspect",
-    "tsc": "tsc",
-    "webpack-dev-server": "webpack-dev-server",
-    "webpack": "webpack"
+
+    "test:debug": "npm run test:debug:build && npm run test:debug:mocha",
+    "test:debug:build": "tsc -p tsconfig.test.json",
+    "test:debug:mocha": "mocha --debug-brk",
+    "test:debug:mocha:inspect": "mocha --debug-brk --inspect",
+
+    "tsc": "tsc"
   },
   "dependencies": {
     "@types/chai": "^3.4.34",
