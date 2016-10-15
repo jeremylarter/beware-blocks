@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "es5",
         "outDir": "built",
-        "watch": true,
+        "watch": false,
         "sourceMap": true,
         "removeComments": false,
         "module": "commonjs",
