@@ -48,7 +48,7 @@ function main(sources) {
         numberOfBlocks: 7
     });
 
-    const seconds$ = Observable.interval(1000); // todo: do we need startWith(0)?
+    const seconds$ = Observable.interval(1000);
 
     const childSources = {
         props: props$,
