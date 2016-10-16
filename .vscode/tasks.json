@@ -58,6 +58,9 @@
 		// },
 		{
 			"taskName": "test:debug"
+		},
+		{
+			"taskName": "update"
 		}
 
 		// {

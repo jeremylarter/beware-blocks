@@ -14,20 +14,16 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@cycle/dom": "^12.2.5",
     "@cycle/rxjs-run": "^3.0.3",
     "chai": "^3.5.0",
     "eslint": "^3.8.0",
     "jslint": "^0.10.3",
-    "mocha": "^3.1.0",
-    "rxjs": "^5.0.0-beta.12",
     "sinon": "^1.17.6",
     "ts-loader": "^0.8.2",
     "tslint": "^3.15.1",
     "tslint-loader": "^2.1.5",
     "typescript": "^2.0.3",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.1",
     "xstream": "^6.4.1"
   },
   "scripts": {
@@ -35,31 +31,31 @@
     "build:transpile": "tsc",
     "build:webpack": "webpack --debug --devtool source-map --output-pathinfo",
     "build:webpack:watch": "webpack --display-modules --progress --debug --devtool source-map --output-pathinfo --watch",
-
     "build:production": "npm run build:production:transpile && npm run build:production:webpack",
     "build:production:transpile": "tsc",
     "build:production:webpack": "webpack --config webpack-production.config.js --optimize-minimize --optimize-occurence-order",
-
     "dev-server": "npm run dev-server:transpile && npm run dev-server:webpack",
     "dev-server:transpile": "tsc",
     "dev-server:webpack": "webpack-dev-server",
-
     "test": "npm run test:build && npm run test:runner",
     "test:build": "tsc -p tsconfig.test.json",
     "test:runner": "mocha",
-
     "test:debug": "npm run test:debug:build && npm run test:debug:mocha",
     "test:debug:build": "tsc -p tsconfig.test.json",
     "test:debug:mocha": "mocha --debug-brk",
     "test:debug:mocha:inspect": "mocha --debug-brk --inspect",
-
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "update": "npm update --save && npm update --dev --save-dev"
   },
   "dependencies": {
+    "@cycle/dom": "^12.2.8",
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.32",
     "@types/node": "^6.0.45",
     "@types/sinon": "^1.16.31",
-    "normalize.css": "^4.2.0"
+    "mocha": "^3.1.2",
+    "normalize.css": "^4.2.0",
+    "rxjs": "^5.0.0-rc.1",
+    "webpack-dev-server": "^1.16.2"
   }
 }
