@@ -11,8 +11,8 @@ import { should } from "chai";
 import { Blocks } from "../scripts/blocks";
 
 import {Stream as xs} from "xstream";
-import { Observable } from "rxjs";
-//import * as Rx from "rxjs";
+import { Observable, TestScheduler, Observer } from "rxjs";
+import * as Rx from "rxjs";
 
 import { run } from "@cycle/rxjs-run";
 import {default as RxJSAdapter} from "@cycle/rxjs-adapter"
@@ -29,14 +29,9 @@ before(function () {
 });
 
 describe("source", function () {
-    it("should have working deep equal assertions", function () {
-        const expected = ["hello world"];
-        const actual = ["hello world"];
-        actual.should.deep.equal(expected);
-    });
 
     it("should output numberOfBlocks into sink", function () {
-        const expectedNumberOfBlocks = 7;
+        const expectedNumberOfBlocks = 934;
         const childSource = {
             props: xs.of({
                 numberOfBlocks: expectedNumberOfBlocks
@@ -60,6 +55,29 @@ describe("source", function () {
     });
 
     // it("should output 100 seconds after 100 seconds has elapsed", function () {
-    //     true.should.equal(false);
+        //todo: learn cyclejs harness for marble diagrams
+        //https://github.com/ReactiveX/rxjs/blob/master/doc/writing-marble-tests.md
+        //https://github.com/ReactiveX/rxjs/blob/master/spec/helpers/marble-testing.ts hot and cold wrapper function declarations
+        
+    //     const expectedNumberOfBlocks = 7;
+    //     const childSource = {
+    //         props: xs.of({
+    //             numberOfBlocks: expectedNumberOfBlocks
+    //         }),
+    //         seconds: Observable.interval(10)
+    //     };//todo: test setup of the childSource
+        
+    //     //const mockedDOMchildSource = mockDOMSource(RxJSAdapter, childSource);
+
+    //     const sink = Blocks(childSource);
+    //     let actual: number = 0;
+    //     sink.DOM.take(1).subscribe({
+    //         next: function (heading) {
+    //             actual = heading;
+    //         }, 
+    //         error: x => x, 
+    //         complete: x => x});
+
+    //     actual.should.equal("<h1>something ...</h1>");
     // });
 });
